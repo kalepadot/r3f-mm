@@ -22,7 +22,7 @@ import {
   OrbitControls,
   Stats,
 } from '@react-three/drei';
-// import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
+// import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import * as STDLIB from 'three-stdlib';
 
 import styles from './MainScene.module.css';

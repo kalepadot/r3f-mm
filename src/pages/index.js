@@ -18,6 +18,7 @@ import { ease } from '@/styles/motion';
 import Cart from '@/components/Cart';
 import Navbar from '@/components/Navbar';
 import Ballpit from '@/components/Ballpit';
+import Mm from '@/components/Mm';
 
 const transition = {
   duration: 0.45,
@@ -47,7 +48,8 @@ export default function Home() {
         >
           <main className="relative mx-auto ">
             <Navbar />
-            <Cart />
+            {/* <Cart /> */}
+            <Mm />
           </main>
         </motion.div>
       </div>

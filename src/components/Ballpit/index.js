@@ -11,14 +11,14 @@ export default function Ballpit() {
         gl={{ stencil: false, antialias: false }}
         camera={{ position: [0, 0, 20], fov: 50, near: 17, far: 40 }}
       >
-        <fog attach="fog" args={['white', 25, 35]} />
-        <color attach="background" args={['#303444']} />
-        <ambientLight intensity={1.3} />
+        <fog attach="fog" args={['#A90000', 25, 35]} />
+        <color attach="background" args={['#000000']} />
+        <ambientLight intensity={1.5} />
         <directionalLight position={[-10, -10, -5]} intensity={0.5} />
         <directionalLight
           castShadow
-          intensity={5}
-          position={[50, 50, 20]}
+          intensity={4}
+          position={[50, 50, 25]}
           shadow-mapSize={[256, 256]}
           shadow-camera-left={-10}
           shadow-camera-right={10}
@@ -39,14 +39,14 @@ export default function Ballpit() {
           <SSAO
             radius={0.4}
             intensity={50}
-            luminanceInfluence={0.4}
-            color="black"
+            luminanceInfluence={0.2}
+            color="red"
           />
           <Bloom
-            intensity={1.2}
+            intensity={0.5}
             kernelSize={3}
             luminanceThreshold={0.5}
-            luminanceSmoothing={0.5}
+            luminanceSmoothing={1.0}
           />
         </EffectComposer>
       </Canvas>
@@ -69,7 +69,7 @@ function InstancedSpheres({ count = 200 }) {
       args={[null, null, count]}
     >
       <sphereBufferGeometry args={[1.2, 32, 32]} />
-      <meshLambertMaterial color="#3bba9c" />
+      <meshLambertMaterial color="#ffc0cb" />
     </instancedMesh>
   );
 }
