@@ -3,32 +3,8 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { useGLTF } from '@react-three/drei';
 
-function Box(props) {
-  // This reference gives us direct access to the THREE.Mesh object
-  const ref = useRef();
-  // Hold state for hovered and clicked events
-  const [hovered, hover] = useState(false);
-  const [clicked, click] = useState(false);
-  // Subscribe this component to the render-loop, rotate the mesh every frame
-  useFrame((state, delta) => (ref.current.rotation.x += delta));
-  // Return the view, these are regular Threejs elements expressed in JSX
-  return (
-    <mesh
-      {...props}
-      ref={ref}
-      scale={clicked ? 1.5 : 1}
-      onClick={event => click(!clicked)}
-      onPointerOver={event => hover(true)}
-      onPointerOut={event => hover(false)}
-    >
-      {/* <boxGeometry args={[1, 1, 1]} /> */}
-
-      <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
-    </mesh>
-  );
-}
 function Mm(props) {
-  const { nodes, materials } = useGLTF('/mm.glb');
+  const { nodes, materials } = useGLTF('/mmredglb.glb');
 
   return (
     <group {...props} dispose={null}>
@@ -43,12 +19,15 @@ function Mm(props) {
 }
 export default function App() {
   return (
-    <Canvas>
+    <Canvas
+      style={{ height: `340px` }}
+      shadows
+      camera={{ position: [0, 20, 4], fov: -10 }}
+    >
       <ambientLight intensity={0.5} />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
       <pointLight position={[-10, -10, -10]} />
-
-      <OrbitControls />
+      <OrbitControls autoRotate />
       <Suspense fallback={null}>
         <Mm />
       </Suspense>
