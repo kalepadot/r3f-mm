@@ -1,10 +1,5 @@
 import * as React from 'react';
 import dynamic from 'next/dynamic';
-import { useAnimation } from 'framer-motion';
-
-import { useLocomotiveScroll } from 'react-locomotive-scroll';
-
-import ArrowScroll from '@/components/ArrowScroll';
 
 const MainScene = dynamic(() => import('@/components/MainScene'), {
   ssr: false,
@@ -31,7 +26,6 @@ export default function Home() {
   return (
     <CommonLayout>
       <div className="min-h-[100vh] ">
-        {/* <MainScene /> */}
         <Ballpit />
         <motion.div
           initial={{
@@ -48,12 +42,10 @@ export default function Home() {
         >
           <main className="relative mx-auto ">
             <Navbar />
-            {/* <Cart /> */}
             <Mm />
           </main>
         </motion.div>
       </div>
-      {/* <ArrowScroll /> */}
     </CommonLayout>
   );
 }
