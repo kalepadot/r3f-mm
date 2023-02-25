@@ -10,7 +10,7 @@ import CommonLayout from '@/layouts/CommonLayout';
 import { useTheme } from '@/hooks/useTheme';
 import { motion } from 'framer-motion';
 import { ease } from '@/styles/motion';
-import Cart from '@/components/Cart';
+// import Cart from '@/components/Cart';
 import Navbar from '@/components/Navbar';
 import Ballpit from '@/components/Ballpit';
 import Mm from '@/components/Mm';
