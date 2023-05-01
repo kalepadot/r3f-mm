@@ -14,7 +14,7 @@ import { ease } from '@/styles/motion';
 import Navbar from '@/components/Navbar';
 import Ballpit from '@/components/Ballpit';
 import Mm from '@/components/Mm';
-
+import Model from 'components/lineanim';
 const transition = {
   duration: 0.45,
   ease: [0.4, 0, 0.2, 1],
@@ -43,6 +43,7 @@ export default function Home() {
           <main className="relative mx-auto ">
             <Navbar />
             <Mm />
+            {/* <Model /> */}
           </main>
         </motion.div>
       </div>
